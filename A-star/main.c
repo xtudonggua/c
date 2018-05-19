@@ -50,7 +50,7 @@ void dump_opened(){
 }
 
 // 向open列表插入新结点，插入后要保证有序
-int opened_insert_node(Astar_node *node, int w){
+void opened_insert_node(Astar_node *node, int w){
     assert(!node->in_open && !node->in_close);
     int i,j;
     for(i=0;i<open_node_count;i++){
@@ -66,7 +66,7 @@ int opened_insert_node(Astar_node *node, int w){
 }
 
 // 移除结点，当某一结点有更小的路经时调用
-int opened_remove_node(Astar_node *node){
+void opened_remove_node(Astar_node *node){
     assert(node->in_open && !node->in_close);
     int i,j;
     for(i=0;i<open_node_count;i++){
